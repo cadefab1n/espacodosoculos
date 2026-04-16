@@ -836,19 +836,8 @@ export default function App() {
               { src: "/images/imagem5.jpg", alt: "Estilo Fashion" },
               { src: "/images/imagem6.jpg", alt: "Estilo Urbano" },
             ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="relative group overflow-hidden rounded-2xl border border-white/10"
-              >
-                <img 
-                  src={item.src} 
-                  alt={item.alt} 
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
+             
+                  
                     // Fallback to previous URLs if local files fail to load
                     const fallbacks = [
                       "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/0.png",
