@@ -828,15 +828,47 @@ export default function App() {
           </div>
           
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {[
-              { src: "/images/imagem1.jpg", alt: "Estilo Elegante" },
-              { src: "/images/imagem2.jpg", alt: "Estilo Casual" },
-              { src: "/images/imagem3.jpg", alt: "Estilo Moderno" },
-              { src: "/images/imagem4.jpg", alt: "Estilo Profissional" },
-              { src: "/images/imagem5.jpg", alt: "Estilo Fashion" },
-              { src: "/images/imagem6.jpg", alt: "Estilo Urbano" },
-            ].map((item, i) => (
-             
+
+          {[
+  { src: "/images/imagem1.jpg", alt: "Estilo Elegante" },
+  { src: "/images/imagem2.jpg", alt: "Estilo Casual" },
+  { src: "/images/imagem3.jpg", alt: "Estilo Moderno" },
+  { src: "/images/imagem4.jpg", alt: "Estilo Profissional" },
+  { src: "/images/imagem5.jpg", alt: "Estilo Fashion" },
+  { src: "/images/imagem6.jpg", alt: "Estilo Urbano" },
+].map((item, i) => (
+  <motion.div
+    key={i}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="relative group overflow-hidden rounded-2xl border border-white/10"
+  >
+    <img
+      src={item.src}
+      alt={item.alt}
+      className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
+      onError={(e) => {
+        const fallbacks = [
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/0.png",
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/1.png",
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/2.png",
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/3.png",
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/4.png",
+          "https://storage.googleapis.com/msgs-attachments/628bcf56-c006-49f7-b5e1-e7d764524062/5.png"
+        ];
+        e.currentTarget.src = fallbacks[i];
+      }}
+    />
+
+    <div className="absolute inset-0 bg-brand-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      <span className="text-white font-bold text-sm uppercase tracking-widest">
+        {item.alt}
+      </span>
+    </div>
+  </motion.div>
+))}
+            
                   
                     // Fallback to previous URLs if local files fail to load
                     const fallbacks = [
