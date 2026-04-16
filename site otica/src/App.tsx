@@ -829,12 +829,12 @@ export default function App() {
           
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             {[
-              { src: "/imagem1.jpg", alt: "Estilo Elegante" },
-              { src: "/imagem2.jpg", alt: "Estilo Casual" },
-              { src: "/imagem3.jpg", alt: "Estilo Moderno" },
-              { src: "/imagem4.jpg", alt: "Estilo Profissional" },
-              { src: "/imagem5.jpg", alt: "Estilo Fashion" },
-              { src: "/imagem6.jpg", alt: "Estilo Urbano" },
+              { src: "/images/imagem1.jpg", alt: "Estilo Elegante" },
+              { src: "/images/imagem2.jpg", alt: "Estilo Casual" },
+              { src: "/images/imagem3.jpg", alt: "Estilo Moderno" },
+              { src: "/images/imagem4.jpg", alt: "Estilo Profissional" },
+              { src: "/images/imagem5.jpg", alt: "Estilo Fashion" },
+              { src: "/images/imagem6.jpg", alt: "Estilo Urbano" },
             ].map((item, i) => (
               <motion.div 
                 key={i}
